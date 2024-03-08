@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 4% 6%;
+  background-color: rgb(37, 37, 37);
+  background-image: url("winner-e9ec3212.webp");
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 70%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  position: relative;
+}
+
+.item {
+  width: 80%;
+  height: 100%;
+
+  &__year {
+    font-size: 64px;
+    color: rgb(54, 54, 54);
+    position: relative;
+  }
+
+  .left::after {
+    content: "";
+    position: absolute;
+    left: 96%;
+    top: 72%;
+    background: rgb(104, 103, 103);
+    width: 26%;
+    height: 1px;
+    transform: translate(9px, 30%);
+  }
+
+  .left::before {
+    content: "";
+      position: absolute;
+      right: -27%;
+      top: 66%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgb(104, 103, 103);
+  }
+
+  .right::before {
+    content: "";
+    position: absolute;
+    left: -38%;
+    top: 80%;
+    background: rgb(104, 103, 103);
+    width: 30%;
+    height: 1px;
+    transform: translate(9px, 30%);
+  }
+
+  .right::after {
+    content: "";
+      position: absolute;
+      left: -36%;
+      top: 73%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgb(104, 103, 103);
+  }
+
+  &__text {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:first-child::after {
+    content: "";
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    background: rgb(104, 103, 103);
+    width: 1px;
+    height: 90%;
+  }
+  
+  &:nth-child(odd) {
+    text-align: right;
+  }
+  
+  &:nth-child(even) {
+    margin-top: 60%;
+    padding-left: 20%;
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .content {
+    grid-template-columns: 1fr;
+    margin-bottom: 60px;
+  }
+
+  .item {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    &__year {
+      text-align: center;
+    }
+
+    .left::after, .left::before,
+    .right::before, .right::after {
+      display: none;
+    }
+
+    &__text {
+      text-align: start;
+      position: relative;
+    }
+
+    &:nth-child(even) {
+      margin-top: 10%;
+      padding-left: 0;
+    }
+
+    &__text::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgb(104, 103, 103);
+    }
+
+    &::after, &:first-child::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      background: rgb(104, 103, 103);
+      width: 3px;
+      height: 45px;
+      transform: translate(9px, 30%);
+    }
+
+    &:first-child::after {
+      top: 64%;
+    }
+  }
+}
